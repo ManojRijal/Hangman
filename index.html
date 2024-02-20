@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hangman Game</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<style>
+    
+    
+    
+
+    .footer {
+        width: 100%;
+        height: 50px; /* Set the height of your footer */
+        background-color: #333; /* Footer color */
+        color: white; /* Text color */
+        text-align: center; /* Center-align text */
+        line-height: 50px; /* Align the text vertically */
+        position: absolute; /* Positioning */
+        bottom: 0; /* Stick to bottom */
+    }
+</style>
+<body> 
+    
+    <div id="playerInfo"></div>
+    
+    <div class="game-modal">
+        <div class="content">
+            <img src="path_to_your_end_game_image" alt="End Game Image">
+            <h4>Game Over!</h4>
+            <p>The correct word was: <b>WORD</b></p>
+            <button class="play-again">Play Again</button>
+        </div>
+    </div>
+    <div class="container">
+        <div class="hangman-box">
+            <img src="images/hangg.png" alt="Hangman Image">
+            <h1>Hangman Game</h1>
+        </div>
+        <div class="game-box">
+            <ul class="word-display">
+                <!-- The letters of the word will be displayed here -->
+            </ul>
+            <h4 class="hint-text">Hint: <b>Your Hint Here</b></h4>
+            <h4 class="guesses-text">Incorrect guesses: <b>0</b></h4>
+            <div class="keyboard">
+                <!-- The keyboard buttons will be dynamically generated here -->
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <p>Developed by Manoj Rijal © 2024</p>
+    </div>
+
+    <script>
+        window.onload = function() {
+            const params = new URLSearchParams(window.location.search);
+            const player = params.get('player');
+            if (player) {
+                const playerInfoDiv = document.getElementById('playerInfo');
+                playerInfoDiv.innerText = 'Player ' + player + ' is playing';
+                playerInfoDiv.style.position = 'absolute';
+                playerInfoDiv.style.top = '10px'; // Adjust the position as needed
+                playerInfoDiv.style.left = '10px'; // Adjust the position as needed
+                playerInfoDiv.style.color = 'Black'; // Make the text color white or any color that stands out
+                playerInfoDiv.style.fontSize = '2.5em'; // Make the font size larger or as needed
+                // Add any additional styling you want for this message
+            }
+        };
+    </script>
+    
+    <script src="word-list.js"></script>
+    <script src="script.js"></script>
+    
+</body>
+</html>

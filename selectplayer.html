@@ -1,0 +1,64 @@
+<!-- selectplayer.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Player - Hangman Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+        body {
+            background-image: url('images/hangg.png'); /* Replace with actual image path */
+            background-size: 50%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            opacity: 300%;
+            margin: 0; /* Remove default margin */
+            height: 100%; /* Full height */
+            display: flex;
+            flex-direction: column; /* Stack children vertically */
+        }
+        
+        
+
+        .footer {
+            width: 100%;
+            height: 50px; /* Set the height of your footer */
+            background-color: #333; /* Footer color */
+            color: white; /* Text color */
+            text-align: center; /* Center-align text */
+            line-height: 50px; /* Align the text vertically */
+            position: absolute; /* Positioning */
+            bottom: 0; /* Stick to bottom */
+            opacity: 70%;
+        }
+    </style>
+<body>
+    <div class="select-player-container">
+        <h1>Select Player</h1>
+        <button id="player1">Player 1</button>
+        <button id="player2">Player 2</button>
+        <button id="player3">Player 3</button>
+        <button id="player4">Player 4</button>
+
+    </div>
+
+    <div class="footer">
+        <p>Developed by Manoj Rijal © 2024</p>
+    </div>
+
+    <script>
+        function selectPlayer(playerNumber) {
+            window.location.href = 'index.html?player=' + playerNumber; // Redirect with player number
+        }
+
+        document.getElementById('player1').addEventListener('click', function() { selectPlayer(1); });
+        document.getElementById('player2').addEventListener('click', function() { selectPlayer(2); });
+        document.getElementById('player3').addEventListener('click', function() { selectPlayer(3); });
+        document.getElementById('player4').addEventListener('click', function() { selectPlayer(4); });
+
+    </script>
+</body>
+</html>
